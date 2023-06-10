@@ -79,6 +79,13 @@ tail_includes:
   </header>
 
   <div class="content">
+    {% if page.preamble %}
+      <div class="mb-3" style="text-align: center;">
+        <p class="text-muted" style="margin: auto; width: 75%; font-style: italic;">
+          {{page.preamble }}
+        </p>
+      </div>
+    {% endif %}
     {{ content }}
   </div>
 
