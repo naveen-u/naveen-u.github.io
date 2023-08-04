@@ -1,0 +1,33 @@
+<article onclick="location.href={{ repository.html_url }}" class="card-wrapper card height-full">
+  <a href="{{ repository.html_url }}" target="_blank" class="height-full">
+    <div class="post-preview row g-0 flex-md-row-reverse height-full">
+      <div
+        class="card-body github-component d-flex flex-column flex-justify-between height-full text-left rounded-1 p-3 jcsb">
+        <div>
+          <div class="card-title d-flex flex-justify-between flex-items-start mb-1">
+            <h3 class="f4 lh-condensed mb-1">
+              <i class="fa-fw fab fa-github"></i>
+              <span>{{ repository.name }}</span>
+            </h3>
+          </div>
+          <div class="mb-2 ws-normal card-text content">{{ repository.description }}</div>
+        </div>
+        <div class="f6">
+          {% if repository.language %}
+          {% if site.data.languages[repository.language]["devicon"] %}
+          {% assign devicon=site.data.languages[repository.language]["devicon"] %}
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{ devicon }}/{{ devicon }}-original.svg"
+            class="mr-3" height="20px" width="20px" alt="{{ repository.language }}"/>
+          {% else %}
+          {% unless site.data.colors[repository.language]["color"] == empty %}
+          {% assign langColor=site.data.languages[repository.language]["color"] %}
+          <span class="repo-language-color ml-0 mr-1" style="background-color:{{ langColor }}"></span>
+          {% endunless %}
+          {% endif %}
+          <span class="mr-3 post-meta" itemprop="programmingLanguage">{{ repository.language }}</span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </a>
+</article>

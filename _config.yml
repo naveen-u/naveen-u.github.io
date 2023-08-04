@@ -116,6 +116,17 @@ paginate: 10
 # The base URL of your site
 baseurl: ""
 
+projects:
+  sort_by: pushed
+  exclude:
+    archived: false
+    forks: true
+    projects:
+      - naveen-u.github.io
+
+plugins:
+  - jekyll-github-metadata
+
 # ------------ The following options are not recommended to be modified ------------------
 
 kramdown:
