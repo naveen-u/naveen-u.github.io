@@ -1,8 +1,8 @@
 ---
 title: "Notes on Algorithmic Game Theory"
 date: 2019-05-14 15:12:07 +0530
-categories: [Technical, Studies]
-tags: [technical, theoretical-computer-science, bits-pilani, notes] # TAG names should always be lowercase
+categories: [Technical]
+tags: [technical, theoretical-computer-science, studies, bits-pilani, notes] # TAG names should always be lowercase
 preamble: Notes on Algorithmic Game Theory based on <a href="https://timroughgarden.org/f13/f13.html">lecture notes by Prof. Tim Roughgarden</a>. Originally written along with <a href="https://github.com/MustansirM">Mustansir Mama</a> for a study project, done under the guidance of <a href="https://www.bits-pilani.ac.in/pilani/abhishek-mishra/">Prof. Abhishek Mishra</a>.
 summary: Notes on introductory Algorithmic Game Theory.
 math: true

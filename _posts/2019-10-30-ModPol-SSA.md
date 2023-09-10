@@ -1,8 +1,8 @@
 ---
 title: Hamilton – Contrasting The Man and The Musical
 date: 2019-10-30 19:27:05 +0530
-categories: [Non-technical, Studies]
-tags: [non-technical, politics, bits-pilani] # TAG names should always be lowercase
+categories: [Non-technical]
+tags: [non-technical, studies, politics, bits-pilani] # TAG names should always be lowercase
 preamble: Originally written for a term paper submitted in partial fulfilment of the course Modern Political Concepts (GS F211) under <a href="https://www.bits-pilani.ac.in/pilani/harikrishnan-gopinadhan-nair/">Prof. Hari Nair</a>.
 summary: A study on how the performing arts can influence political thought.
 ---

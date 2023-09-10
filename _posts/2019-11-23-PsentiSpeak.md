@@ -1,7 +1,7 @@
 ---
 title: A Tribute to BITS Pilani
 date: 2019-11-30 10:04:42 +0530
-categories: [Non-technical, Articles]
+categories: [Non-technical]
 tags: [non-technical, bits-pilani] # TAG names should always be lowercase
 preamble: Originally written for the "Psenti-Speak" column of <a href="https://epcbits.com/psenti-speak-naveen-unnikrishnan/">The Fine Print</a>.
 summary: A few words from a senior in his last semester.
