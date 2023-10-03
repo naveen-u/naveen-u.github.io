@@ -16,7 +16,7 @@ timezone: Asia/Kolkata
 
 title: Naveen Unnikrishnan # the main title
 
-tagline: Yeeeeeeeeeeeees? # it will display as the sub-title
+tagline: # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   Naveen Unnikrishnan's personal blog.
@@ -75,7 +75,7 @@ theme_mode: # [light|dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://avatars.githubusercontent.com/u/29832401?v=4
+avatar: https://media.licdn.com/dms/image/C5603AQFwzGUMnoZeSw/profile-displayphoto-shrink_800_800/0/1595300017934?e=1707955200&v=beta&t=6eyOamrxViHxR_ZTCdmf5kNsmR9WWGfqLIdOnQwXIyw
 
 # boolean type, the global switch for TOC in posts.
 toc: true
