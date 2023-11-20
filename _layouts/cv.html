@@ -1,0 +1,34 @@
+---
+layout: compress
+---
+
+<!doctype html>
+
+{% include origin-type.html %}
+
+{% include lang.html %}
+
+{% if site.theme_mode %}
+  {% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
+{% endif %}
+
+<!-- `site.alt_lang` can specify a language different from the UI -->
+<html lang="{{ site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
+  {% include head.html %}
+
+  <body>
+    {% include sidebar.html lang=lang %}
+
+    <div id="main-wrapper" class="d-flex justify-content-center">
+      <div class="container d-flex flex-column px-xxl-5">
+        {% include topbar.html lang=lang %}
+        <div class="post-meta text-muted">
+          <span>
+            Last updated on: <strong>{{page.updated}}</strong>
+          </span>
+        </div>
+        <object data="/assets/files/Naveen Unnikrishnan_CV_20231119_v0.1.pdf" width="100%" height="100%" type="application/pdf"></object>
+      </div>
+    </div>
+  </body>
+</html>
