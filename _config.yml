@@ -31,7 +31,7 @@ github:
   username: naveen-u # change to your github username
 
 twitter:
-  username: thisisnaveenu # change to your twitter username
+  username: # change to your twitter username
 
 social:
   # Change to your full name.
@@ -41,9 +41,6 @@ social:
   links:
     # The first element serves as the copyright owner's link
     - https://github.com/naveen-u # change to your github homepage
-    - https://twitter.com/thisisnaveenu # change to your twitter homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
     - https://in.linkedin.com/in/naveenunnikrishnan
 
 google_site_verification: 4KQB9rghSb_1QsnXIiSqxer7ZHk18L3klM_4odR4rD0
