@@ -23,5 +23,5 @@ In my spare time, I enjoy reading, playing football, and making lists. Here are 
 This is what I look like from a distance:
 
 <article class="my-image">
-    <img src="/assets/img/me.png" style="height: 300px;" />
+    <img src="/assets/img/me.png" style="height: 300px;" alt="Me" />
 </article>
