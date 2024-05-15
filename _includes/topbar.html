@@ -8,11 +8,7 @@
     <nav id="breadcrumb" aria-label="Breadcrumb">
       {% assign paths = page.url | split: '/' %}
 
-      {% if paths.size == 0 or page.layout == 'home' %}
-        <!-- index page -->
-        <span>{{ site.data.locales[include.lang].tabs.home | capitalize }}</span>
-
-      {% else %}
+      {% unless paths.size == 0 %}
         {% for item in paths %}
           {% if forloop.first %}
             <span>
@@ -22,6 +18,13 @@
             </span>
 
           {% elsif forloop.last %}
+            {% if page.layout == 'categories' or page.layout == 'tags' %}
+              <span>
+                <a href="{{ 'writing' | relative_url }}">
+                  {{ site.data.locales[include.lang].tabs['writing'] | default: page.title }}
+                </a>
+              </span>
+            {% endif %}
             {% if page.collection == 'tabs' %}
               <span>{{ site.data.locales[include.lang].tabs[item] | default: page.title }}</span>
             {% else %}
@@ -30,13 +33,25 @@
 
           {% elsif page.layout == 'category' or page.layout == 'tag' %}
             <span>
+              <a href="{{ 'writing' | relative_url }}">
+                {{ site.data.locales[include.lang].tabs['writing'] | default: page.title }}
+              </a>
+            </span>
+            <span>
+              <a href="{{ item | relative_url }}">
+                {{ site.data.locales[include.lang].tabs[item] | default: page.title }}
+              </a>
+            </span>
+
+          {% elsif page.layout == 'post' %}
+            <span>
               <a href="{{ item | relative_url }}">
                 {{ site.data.locales[include.lang].tabs[item] | default: page.title }}
               </a>
             </span>
           {% endif %}
         {% endfor %}
-      {% endif %}
+      {% endunless %}
     </nav>
     <!-- endof #breadcrumb -->
 
@@ -45,7 +60,7 @@
     </button>
 
     <div id="topbar-title">
-      {% if page.layout == 'home' %}
+      {% if page.layout == 'writing' %}
         {{- site.data.locales[include.lang].title | default: site.title -}}
       {% elsif page.collection == 'tabs' or page.layout == 'page' %}
         {%- capture tab_key -%}{{ page.url | split: '/' }}{%- endcapture -%}
@@ -55,23 +70,25 @@
       {% endif %}
     </div>
 
-    <button type="button" id="search-trigger" class="btn btn-link">
-      <i class="fas fa-search fa-fw"></i>
-    </button>
+    {% if page.layout == 'writing' %}
+      <button type="button" id="search-trigger" class="btn btn-link">
+        <i class="fas fa-search fa-fw"></i>
+      </button>
 
-    <search class="align-items-center ms-3 ms-lg-0">
-      <i class="fas fa-search fa-fw"></i>
-      <input
-        class="form-control"
-        id="search-input"
-        type="search"
-        aria-label="search"
-        autocomplete="off"
-        placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
-      >
-    </search>
-    <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
-      {{- site.data.locales[include.lang].search.cancel -}}
-    </button>
+      <search class="align-items-center ms-3 ms-lg-0">
+        <i class="fas fa-search fa-fw"></i>
+        <input
+          class="form-control"
+          id="search-input"
+          type="search"
+          aria-label="search"
+          autocomplete="off"
+          placeholder="{{ site.data.locales[include.lang].search.hint | capitalize }}..."
+        >
+      </search>
+      <button type="button" class="btn btn-link text-decoration-none" id="search-cancel">
+        {{- site.data.locales[include.lang].search.cancel -}}
+      </button>
+    {% endif %}
   </div>
 </header>
