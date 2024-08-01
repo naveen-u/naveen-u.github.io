@@ -5,7 +5,7 @@ layout: home
 ### Hi, I'm Naveen.
 
 <br>
-I am currently working as a senior software engineer at Arcesium. In Fall 2024, I will be joining the University of Michigan as an MS CS student.
+I am an incoming MSE Computer Science student at the University of Michigan, Ann Arbor, and a software engineer with over four years of experience. Previously, I was a Senior Software Engineer at Arcesium, and an intern at both Amazon and Arcesium.
 
 In my spare time, I enjoy reading, playing football, and making lists. Here are some of those lists:
 
