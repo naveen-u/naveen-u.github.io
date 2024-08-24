@@ -2,12 +2,24 @@
 layout: home
 ---
 
-### Hi, I'm Naveen.
+<style>
+.hitext {
+    margin-bottom: 0 !important;
+}
+.ipa, .pronouns {
+    color: var(--text-muted-color) !important;
+}
+</style>
+
+<h3 class="hitext">Hi, I'm Naveen</h3>
+<i class="ipa">Pronounced n̪aʋiːn</i>
+<br>
+<i class="pronouns">he/him</i>
 
 <br>
-I am an incoming MSE Computer Science student at the University of Michigan, Ann Arbor, and a software engineer with over four years of experience. Previously, I was a Senior Software Engineer at Arcesium, and an intern at both Amazon and Arcesium.
+I am an MS in Computer Science student at the University of Michigan, Ann Arbor, and a software engineer with over four years of experience. Previously, I was a Senior Software Engineer at Arcesium, an intern at both Amazon and Arcesium, and an undergraduate Computer Science student at BITS Pilani.
 
-In my spare time, I enjoy reading, playing football, and making lists. Here are some of those lists:
+In my spare time, I enjoy reading, playing soccer, and making lists. Here are some of those lists:
 
 ---
 
@@ -20,7 +32,7 @@ In my spare time, I enjoy reading, playing football, and making lists. Here are 
 
 ---
 
-This is what I look like from a distance:
+Here is an [artist's](https://www.instagram.com/kindofahappystory/) rendition of me:
 
 <article class="my-image">
     <img src="/assets/img/me.png" style="height: 300px;" alt="Me" />
