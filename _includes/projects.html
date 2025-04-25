@@ -5,18 +5,24 @@
   {% assign sort_order = 'pushed_at' %}
   {% endif %}
 
-  {% if site.projects.exclude.archived && site.projects.exclude.forks %}
-  {% assign filtered_repos = site.github.public_repositories | where:'archived', false | where:'fork', false | sort:
-  sort_order | reverse %}
-  {% elsif site.projects.exclude.archived %}
-  {% assign filtered_repos = site.github.public_repositories | where:'archived', false | sort: sort_order | reverse %}
-  {% elsif site.projects.exclude.forks %}
-  {% assign filtered_repos = site.github.public_repositories | where:'fork', false | sort: sort_order | reverse %}
-  {% else %}
-  {% assign filtered_repos = site.github.public_repositories | sort: sort_order | reverse %}
+  {% if site.projects.exclude.forks %}
+  {% assign fork_exceptions = site.github.public_repositories | where:'fork', true | where_exp:'item',
+  'site.projects.exclude.fork_exceptions contains item.name' %}
   {% endif %}
 
-  {% for repository in filtered_repos | limit: site.projects.limit %}
+  {% if site.projects.exclude.archived && site.projects.exclude.forks %}
+  {% assign filtered_repos = site.github.public_repositories | where:'archived', false | where:'fork', false %}
+  {% elsif site.projects.exclude.archived %}
+  {% assign filtered_repos = site.github.public_repositories | where:'archived', false %}
+  {% elsif site.projects.exclude.forks %}
+  {% assign filtered_repos = site.github.public_repositories | where:'fork', false %}
+  {% else %}
+  {% assign filtered_repos = site.github.public_repositories %}
+  {% endif %}
+
+  {% assign repos_to_display = filtered_repos | concat: fork_exceptions | sort: sort_order | reverse %}
+
+  {% for repository in repos_to_display | limit: site.projects.limit %}
   {% unless site.projects.exclude.projects contains repository.name %}
   <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3 mt-0" id="post-list">
     {% include repo-card.html %}

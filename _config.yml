@@ -120,6 +120,8 @@ projects:
     forks: true
     projects:
       - naveen-u.github.io
+    fork_exceptions:
+      - delta-rs-mt
 
 plugins:
   - jekyll-github-metadata
