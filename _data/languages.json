@@ -157,6 +157,7 @@
   },
   "C++": {
     "color": "#f34b7d",
+    "devicon": "cplusplus",
     "url": "https://github.com/trending?l=C++"
   },
   "C2hs Haskell": {
@@ -1161,6 +1162,7 @@
   },
   "Rust": {
     "color": "#dea584",
+    "devicon": "rust",
     "url": "https://github.com/trending?l=Rust"
   },
   "Sage": {
@@ -1294,6 +1296,7 @@
   },
   "TeX": {
     "color": "#3D6117",
+    "devicon": "tex",
     "url": "https://github.com/trending?l=TeX"
   },
   "Thrift": {
