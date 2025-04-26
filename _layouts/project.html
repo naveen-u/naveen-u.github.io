@@ -1,0 +1,84 @@
+<!doctype html>
+
+{% include origin-type.html %}
+
+{% include lang.html %}
+
+{% if site.theme_mode %}
+{% capture prefer_mode %}data-mode="{{ site.theme_mode }}"{% endcapture %}
+{% endif %}
+
+<!-- `site.alt_lang` can specify a language different from the UI -->
+<html lang="{{ site.alt_lang | default: site.lang }}" {{ prefer_mode }}>
+{% include head.html %}
+
+<body>
+    {% include sidebar.html lang=lang %}
+
+
+    <div id="main-wrapper" class="d-flex justify-content-center">
+        <div class="container d-flex flex-column px-xxl-5">
+            {% include topbar.html lang=lang %}
+            <div class="row">
+                <main aria-label="Main Content" class="col-12 col-lg-11 col-xl-9 px-md-4">
+                    <article class="px-1">
+                        <h1 class="dynamic-title">
+                            {{ page.title }}
+                        </h1>
+                        <div class="mb-3">
+                            <p class="text-muted">
+                                Find it on <a href={{page.gh}}><i class="fa-fw fab fa-github"></i></a>
+                            </p>
+                        </div>
+                        <div class="content">
+                            {% if page.preamble %}
+                            <div class="mb-3" style="text-align: center;">
+                                <p class="text-muted" style="margin: auto; width: 75%; font-style: italic;">
+                                    {{page.preamble }}
+                                </p>
+                            </div>
+                            {% endif %}
+                            {{ content }}
+                        </div>
+                </main>
+            </div>
+
+
+            <div class="row">
+                <!-- tail -->
+                <div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 px-md-4">
+                    {% for _include in layout.tail_includes %}
+                    {% assign _include_path = _include | append: '.html' %}
+                    {% include {{ _include_path }} lang=lang %}
+                    {% endfor %}
+
+                    {% include_cached footer.html lang=lang %}
+                </div>
+            </div>
+
+        </div>
+
+        <aside aria-label="Scroll to Top">
+            <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
+                <i class="fas fa-angle-up"></i>
+            </button>
+        </aside>
+    </div>
+
+    <div id="mask"></div>
+
+    {% if site.pwa.enabled %}
+    {% include_cached notification.html lang=lang %}
+    {% endif %}
+
+    <!-- JavaScripts -->
+
+    {% include js-selector.html %}
+
+    {% if page.mermaid %}
+    {% include mermaid.html %}
+    {% endif %}
+
+</body>
+
+</html>

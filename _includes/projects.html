@@ -1,20 +1,34 @@
+{% unless site.projects == empty %}
+<p>Select academic projects.</p>
 <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
-  {% if site.projects.sort_by == 'stars' %}
+  {% for repository in site.projects %}
+  <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3 mt-0" id="post-list">
+    {% include repo-card.html %}
+  </div>
+  {% endfor %}
+</div>
+
+<hr style="border-color: var(--text-muted-color)">
+{% endunless %}
+
+<p>Some of my other public repositories on GitHub.</p>
+<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+  {% if site.gh_projects.sort_by == 'stars' %}
   {% assign sort_order = 'stargazers_count', 'last' %}
   {% else %}
   {% assign sort_order = 'pushed_at' %}
   {% endif %}
 
-  {% if site.projects.exclude.forks %}
+  {% if site.gh_projects.exclude.forks %}
   {% assign fork_exceptions = site.github.public_repositories | where:'fork', true | where_exp:'item',
-  'site.projects.exclude.fork_exceptions contains item.name' %}
+  'site.gh_projects.exclude.fork_exceptions contains item.name' %}
   {% endif %}
 
-  {% if site.projects.exclude.archived && site.projects.exclude.forks %}
+  {% if site.gh_projects.exclude.archived && site.gh_projects.exclude.forks %}
   {% assign filtered_repos = site.github.public_repositories | where:'archived', false | where:'fork', false %}
-  {% elsif site.projects.exclude.archived %}
+  {% elsif site.gh_projects.exclude.archived %}
   {% assign filtered_repos = site.github.public_repositories | where:'archived', false %}
-  {% elsif site.projects.exclude.forks %}
+  {% elsif site.gh_projects.exclude.forks %}
   {% assign filtered_repos = site.github.public_repositories | where:'fork', false %}
   {% else %}
   {% assign filtered_repos = site.github.public_repositories %}
@@ -22,8 +36,10 @@
 
   {% assign repos_to_display = filtered_repos | concat: fork_exceptions | sort: sort_order | reverse %}
 
-  {% for repository in repos_to_display | limit: site.projects.limit %}
-  {% unless site.projects.exclude.projects contains repository.name %}
+  {% assign exclude_list = site.projects | map: "name" | concat: site.gh_projects.exclude.projects %}
+
+  {% for repository in repos_to_display | limit: site.gh_projects.limit %}
+  {% unless exclude_list contains repository.name %}
   <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3 mt-0" id="post-list">
     {% include repo-card.html %}
   </div>
