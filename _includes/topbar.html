@@ -49,6 +49,12 @@
                 {{ site.data.locales[include.lang].tabs[item] | default: page.title }}
               </a>
             </span>
+          {% else %}
+            <span>
+              <a href="{{ page.collection | relative_url }}">
+                {{ site.data.locales[include.lang].tabs[item] | default: page.collection }}
+              </a>
+            </span>
           {% endif %}
         {% endfor %}
       {% endunless %}

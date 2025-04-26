@@ -17,6 +17,7 @@ tabs:
   about: About
   resume: Resume
   writing: Writing
+  projects: Projects
 
 # the text displayed in the search bar & search results
 search:
