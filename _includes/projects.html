@@ -36,7 +36,7 @@
 
   {% assign repos_to_display = filtered_repos | concat: fork_exceptions | sort: sort_order | reverse %}
 
-  {% assign exclude_list = site.projects | map: "name" | concat: site.gh_projects.exclude.projects %}
+  {% assign exclude_list = site.projects | map: "title" | concat: site.gh_projects.exclude.projects %}
 
   {% for repository in repos_to_display | limit: site.gh_projects.limit %}
   {% unless exclude_list contains repository.name %}
