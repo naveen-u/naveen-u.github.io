@@ -9,6 +9,9 @@ layout: home
 .ipa, .pronouns {
     color: var(--text-muted-color) !important;
 }
+hr {
+    border-color: var(--text-muted-color) !important;
+}
 </style>
 
 <h3 class="hitext">Hi, I'm Naveen</h3>
@@ -16,7 +19,12 @@ layout: home
 <br>
 <i class="pronouns">he/him</i>
 
-<br>
+<hr>
+
+##### Updates
+**[*May 2025*]** I am spending the summer at Meta as a Software Engineer Intern.
+
+<hr>
 I am an MS in Computer Science student at the University of Michigan, Ann Arbor, and a software engineer with over four years of experience. Previously, I was a Senior Software Engineer at Arcesium, an intern at both Amazon and Arcesium, and an undergraduate Computer Science student at BITS Pilani. Here is an [artist's](https://www.instagram.com/kindofahappystory/) rendition of me:
 
 <article class="my-image">
