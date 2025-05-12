@@ -21,7 +21,7 @@ hr {
 
 <hr>
 
-##### Updates
+#### Updates
 **[*May 2025*]** I am spending the summer at Meta as a Software Engineer Intern.
 
 <hr>
